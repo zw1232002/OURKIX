@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="style/common.css" rel="stylesheet" type="text/css" />
+<script language="javascript" type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
+</head>
+
+<body class="mainbody">
+<div class="input_content">
+		<form method="post" action="saveArticle">
+			<ul>
+				<li><label>标题：</label><input type="text" name="article.title"/></li>
+				<li><label>作者：</label><input type="text" name="article.author"/></li>
+				<li><label>Tags：(逗号分隔)</label><input type="text" name="article.tags"/>
+					<input type="hidden" name="article.majorImg" id="picUrl"></li>
+				<li><!-- 封面图片 --><label>评论选项：(逗号分隔)</label><input type="text" name=""/></li>
+				<li><!-- 栏目列表 -->
+			<label>所属栏目：</label><select name="article.columnId">
+					<option value="2">艺术</option>
+					<option value="5">鞋履</option>
+					<option value="6">设计</option>
+					<option value="7">活动</option>
+					<option value="8">游戏</option>
+					<option value="9">发售日期</option>
+			</select></li>
+			</ul>
+			<!-- 富文本编辑框 -->
+			内容
+			<!-- 封面图片 -->
+			<div class="upload_imgs">
+				<div>封面图片上传</div>
+				 <input width="120" type="file" height="30" name="file_upload" id="major_pic_upload" style="display: none;">
+				<a href="javascript:$('#major_pic_upload').uploadifyUpload();">点我上传图片</a>
+				<input type="submit" style="width:120px;height:30px;" class="select_file"/>
+				 <div class="uploadifyQueue" id="major_pic_uploadQueue"></div>
+				<img width="100px" height="100px" id="majorPic" src="images/test/test4.jpg" >
+			</div>
+			<div class="upload_imgs">
+				<!-- 内容图片 -->
+				<div>上传文章内容图片</div>
+				 <input width="120" type="file" height="30" name="file_upload" id="major_pic_upload" style="display: none;">
+				<a href="javascript:$('#major_pic_upload').uploadifyUpload();">点我上传图片</a>
+				<input type="submit" style="width:120px;height:30px;" class="select_file"/>
+				 <div class="uploadifyQueue" id="major_pic_uploadQueue"></div>
+			</div>
+			<!-- 用来展示上传好的图片的DIV -->
+			<div id="articlePics">
+				
+			</div>
+			<!--提交按钮 -->
+			<br> <input type="submit" id="addArticleSubmit">
+		</form>
+	</div>
+</body>
+</html>

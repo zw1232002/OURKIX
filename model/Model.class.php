@@ -1,0 +1,45 @@
+<?php
+
+class Model extends DB{
+	
+	protected $_db=null;//数据库连接句柄
+	protected $_tables=array();//要操作的表
+	protected $_fields=array();//要操作的字段
+	protected $_limit = '';//limit字段，用来实现分页
+	protected $_R = array();//用来存放临时中转的数据
+	
+	//
+	protected  function __construct(){
+		$this->_db=parent::getInstance();
+	}
+	
+	//查询的基类方法
+	protected function select (Array $_fields,Array $_params=array()){
+		return $this->_db->select($this->_tables, $_fields,$_params);
+		
+	}
+	
+	//添加的基类方法
+	protected function add(Array $_tables,Array $_fields){
+		return $this->_db->add($_tables,$_fields);
+	}
+	
+	//修改方法
+	protected function update(Array $_tables,Array $_updateData,$_where){
+		return $this->_db->update($_tables,$_updateData,$_where);
+	}
+	
+	//删除方法
+	protected function delete(Array $_tables, Array $_where){
+		return $this->_db->delete($_tables,$_where);
+	}
+	
+	
+	//获取处理http请求的类
+	protected function getRequest(){
+		return Request::getInstance();
+	}
+	
+}
+
+?>

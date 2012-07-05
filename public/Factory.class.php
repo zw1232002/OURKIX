@@ -20,7 +20,7 @@ class Factory{
 	//判断action的方法
 	static public function setAction(){
 		$a=self::getA();
-		if(!file_exists(ROOT_PATH.'controller/'.$a.'Action.class.php')){
+		if(!file_exists(ROOT_PATH.'controller/'.ucfirst($a).'Action.class.php')){
 			$a='Index';
 		}
 		eval('self::$_obj= new '.ucfirst($a).'Action();');//用eval方法进行实例化，同时用ucfirst函数，讲第一个字母转换成大写
@@ -31,7 +31,7 @@ class Factory{
 	//判断model的方法
 	static public function setModel(){
 		$a=self::getA();
-		if(!file_exists(ROOT_PATH.'model/'.$a.'Model.class.php')){
+		if(!file_exists(ROOT_PATH.'model/'.ucfirst($a).'Model.class.php')){
 			$a='Index';
 		}
 		eval('self::$_obj= new '.ucfirst($a).'Model();');//用eval方法进行实例化，同时用ucfirst函数，讲第一个字母转换成大写

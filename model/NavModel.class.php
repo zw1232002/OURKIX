@@ -36,7 +36,7 @@ class NavModel extends Model{
 		//通过request类进行过滤，得到一个和数据库中的字段相符的一些值组成的数组
 		$addData=$this->getRequest()->filter($this->_fields);
 		
-		$this->add($this->_tables, $addData);
+		return $this->add($this->_tables, $addData);
 	}
 	
 	//获取某个导航的信息
@@ -50,12 +50,12 @@ class NavModel extends Model{
 		
 		//通过request类进行过滤，得到一个和数据库中的字段相符的一些值组成的数组
 		$addData=$this->getRequest()->filter($this->_fields);
-		$this->update($this->_tables,$addData,array('id='.$addData['id']));
+		return $this->update($this->_tables,$addData,array('id='.$addData['id']));
 	}
 	
 	//删除导航
 	public function delNav(){
-		$this->delete($this->_tables, array('id='.$this->_R['id']));
+		return $this->delete($this->_tables, array('id='.$this->_R['id']));
 	}
 	
 }

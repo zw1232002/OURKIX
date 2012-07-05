@@ -17,7 +17,8 @@ class NavAction extends Action{
 		//如果是post出来的，那么就执行新增导航的方法
 		if(isset($_POST['send'])){
 			$va=$this->_model->addNav();
-// 			Tool::alertLocation(Tool::getPrevPage(), $va);
+			$this->_tpl->display(SMARTY_ADMIN.'error.tpl');
+			Tool::alertLocation(Tool::getPrevPage(), '');
 		}
 		//获取所有的主导航，新增时的下拉列表
 		$this->_tpl->assign('mainNav',$this->_model->getMainNav());

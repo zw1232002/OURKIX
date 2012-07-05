@@ -97,21 +97,16 @@ class DB{
 	* @param(Array) $_fields 要新增数据组成的键值对数组，key是字段名，value是值
 	* @return int   影响的行数
 	* */
-	protected function add(Array $_tables,Array $_fields){
-		$selectTable=$_tables[0];
-	
-		//初始化要新增的字段,将字段数组用","连接起来
-		foreach ($_fields as $key=>$value){
-			$addFields.=$key.',';
-			$addValues.='\''.$value.'\',';
+	protected function add($_tables, Array $_addData) {
+		$_addFields = array();
+		$_addValues = array();
+		foreach ($_addData as $_key=>$_value) {
+			$_addFields[] = $_key;
+			$_addValues[] = $_value;
 		}
-		$addFields=substr($addFields, 0,-1);
-		$addValues=substr($addValues, 0,-1);
-	
-		//生成sql语句
-		$_sql="INSERT INTO $selectTable ($addFields) VALUES($addValues)";
-		
-		//返回影响的行数
+		$_addFields = implode(',', $_addFields);
+		$_addValues = implode("','", $_addValues);
+		$_sql = "INSERT INTO $_tables[0] ($_addFields) VALUES ('$_addValues')";
 		return $this->execute($_sql)->rowCount();
 	}
 	

@@ -7,8 +7,8 @@
 </head>
 
 <body class="mainbody">
-	<div class="onthispage">
-		您当前所在位置&nbsp;&gt;&nbsp;<span>添加导航</span>
+	<div class="onthispage clearfix">
+		您当前所在位置&nbsp;&gt;&nbsp;<span>添加导航</span><a href="?a=nav&m=index" class="back_prev">返回导航列表</a>
 	</div>
 	<div class="input_content">
 		<form action="?a=nav&m=add" method="post">

@@ -58,6 +58,15 @@ class NavModel extends Model{
 		return $this->delete($this->_tables, array('id='.$this->_R['id']));
 	}
 	
+	//ajax获取主导航下的二级导航
+	public function ajaxGetChildNav(){
+		if(isset($_POST['id']) && !Validate::isNullString($_POST['id'])){
+			$result=parent::select(array('id','nav_name'),array('where'=>array("pid=".$_POST['id'])));
+			return $result;
+			
+		}
+			
+	}
 }
 
 ?>

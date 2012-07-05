@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2012-07-05 02:23:20
+<?php /* Smarty version 2.6.26, created on 2012-07-05 17:05:40
          compiled from admin//nav/update.tpl */ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -13,8 +13,9 @@ unset($_smarty_tpl_vars);
 </head>
 
 <body class="mainbody">
-	<div class="onthispage">
-		您当前所在位置&nbsp;&gt;&nbsp;<span>修改导航</span>
+	<div class="onthispage clearfix">
+		您当前所在位置&nbsp;&gt;&nbsp;<span>修改导航</span><a href="<?php echo $this->_tpl_vars['prevPage']; ?>
+" class="back_prev">返回</a>
 	</div>
 	<div class="input_content">
 		<form action="?a=nav&m=update" method="post">

@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2012-07-05 02:14:47
+<?php /* Smarty version 2.6.26, created on 2012-07-06 01:36:51
          compiled from admin/admin.tpl */ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -16,6 +16,7 @@ unset($_smarty_tpl_vars);
 <div class="top">
   <h1>Urbanlook网站后台管理系统</h1>
   <ul class="topMenu">
+  	<li>欢迎回来：<strong>admin</strong></li>
     <li><a href="#">退出后台</a></li>
   </ul>
 </div>
@@ -30,10 +31,10 @@ unset($_smarty_tpl_vars);
         </ul>
       </li>
       <li>
-        <a href="#">News栏目管理</a>
+        <a href="#">文章管理</a>
         <ul>
-          <li><a href="#" target="maincontent">-&nbsp;&nbsp;添加新闻</a></li>
-          <li><a href="#" target="maincontent">-&nbsp;&nbsp;删除新闻</a></li>
+          <li><a href="?a=article" target="maincontent">-&nbsp;&nbsp;文章列表</a></li>
+          <li><a href="?a=article&m=add" target="maincontent">-&nbsp;&nbsp;添加文章</a></li>
         </ul>
       </li>
       <li><a href="#" target="maincontent">News栏目管理</a></li>

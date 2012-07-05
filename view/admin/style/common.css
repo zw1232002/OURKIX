@@ -26,6 +26,7 @@ a:focus { outline: none; }
 .fr {float: right;}
 .alr{text-align:right;font-size:14px;}
 .checkbox{width:13px;height:13px;line-height:13px;margin-right:2px; vertical-align:-2px;*vertical-align:middle;_vertical-align:3px;}
+.nav_list2{margin-left:20px;}
 
 .bm10 {margin-bottom:10px;}
 .bm20 {margin-bottom:20px;}
@@ -104,6 +105,9 @@ body.mainbody {background:none; background:#fff;}
 
 .onthispage {padding-bottom:8px; border-bottom:1px dotted #bdbdbd; margin-bottom:5px;}
 .onthispage span {color:#77a60f;}
+.onthispage .back_prev{float:right;*display:inline;margin-right:20px;color:#c00;font-size:13px;}
+
+
 .lmtitle {line-height:25px; background:#ececec; -moz-border-radius:3px; -webkit-border-radius:3px; border-radius:3px; border:1px solid #bdbdbd; padding-left:8px;}
 .searchBox {border-bottom:1px dotted #bdbdbd; padding:6px 0 12px 0;}
 .searchBox select {display:inline-block; zoom:1; *display:inline; line-height:21px; height:21px; vertical-align:middle;}

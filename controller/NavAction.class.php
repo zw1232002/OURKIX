@@ -21,6 +21,9 @@ class NavAction extends Action{
 		
 		//获取所有的主导航，新增时的下拉列表
 		$this->_tpl->assign('mainNav',$this->_model->getMainNav());
+		
+		//注入返回上一页
+		$this->_tpl->assign('prevPage',Tool::getPrevPage());
 		$this->_tpl->display(SMARTY_ADMIN.'/nav/add.tpl');
 		
 		
@@ -38,6 +41,9 @@ class NavAction extends Action{
 		
 		//获取导航的信息
 		$this->_tpl->assign('nav_info',$this->_model->getOneNav());
+		
+		//注入返回上一页
+		$this->_tpl->assign('prevPage',Tool::getPrevPage());
 		$this->_tpl->display(SMARTY_ADMIN.'/nav/update.tpl');
 	}
 	
@@ -45,6 +51,12 @@ class NavAction extends Action{
 	//删除导航方法
 	public function delete(){
 		$this->_model->delNav() ? Redirect::getInstance($this->_tpl)->succ('?a=nav&m=index', DEL_SUCCESS) : Redirect::getInstance($this->_tpl)->succ(Tool::getPrevPage(), DEL_FAILED);
+	}
+	
+	//ajax获取子导航
+	public function ajaxChildNav(){
+		$re=$this->_model->ajaxGetChildNav();
+		echo json_encode($re);
 	}
 }
 

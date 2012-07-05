@@ -18,7 +18,8 @@ define('SMARTY_RIGHT_DELIMITER', '_}');//定义定界符，防止把js、css之�
 
 /*开始配置数据库连接参数*/
 define('DB_NAME', 'ourkix');//数据库名
-define('DB_DNS', 'mysql:host=localhost;dbname='.DB_NAME);//数据库连接的地址
+define('DB_URL', 'localhost');//数据库地址
+define('DB_DNS', 'mysql:host='.DB_URL.';dbname='.DB_NAME);//数据库连接的地址和数据库名（pdo的连接）
 define('DB_USER', 'root');//数据库的用户名
 define('DB_PWD', 'ZHANGWEI');//数据库的密码
 define('DB_CHARSET', 'utf8');//数据库的编码

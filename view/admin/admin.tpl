@@ -10,6 +10,7 @@
 <div class="top">
   <h1>Urbanlook网站后台管理系统</h1>
   <ul class="topMenu">
+  	<li>欢迎回来：<strong>admin</strong></li>
     <li><a href="#">退出后台</a></li>
   </ul>
 </div>
@@ -24,10 +25,10 @@
         </ul>
       </li>
       <li>
-        <a href="#">News栏目管理</a>
+        <a href="#">文章管理</a>
         <ul>
-          <li><a href="#" target="maincontent">-&nbsp;&nbsp;添加新闻</a></li>
-          <li><a href="#" target="maincontent">-&nbsp;&nbsp;删除新闻</a></li>
+          <li><a href="?a=article" target="maincontent">-&nbsp;&nbsp;文章列表</a></li>
+          <li><a href="?a=article&m=add" target="maincontent">-&nbsp;&nbsp;添加文章</a></li>
         </ul>
       </li>
       <li><a href="#" target="maincontent">News栏目管理</a></li>

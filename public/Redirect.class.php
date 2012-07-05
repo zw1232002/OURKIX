@@ -1,5 +1,5 @@
 <?php
-//跳转类，新增或删除操作时使用
+//跳转类
 class Redirect {
 	//用于存放实例化的对象
 	static private $_instance = null;
@@ -19,6 +19,12 @@ class Redirect {
 	//私有构造
 	private function __construct() {}
 	
+	//跳转
+	public function succ($_url, $_info = '') {
+		self::$_instance->_tpl->display(SMARTY_ADMIN.'error.tpl');
+		Tool::alertLocation($_url,$_info);
+		exit();
+	}
 	
 }
 ?>

@@ -16,7 +16,9 @@ class Tool {
 	//弹出窗，跳转
 	static public function alertLocation($url,$info){
 		if(!Validate::isNullString($info)){
-			echo "<script type='text/javascript'>TINY.box.show('$info',0,0,0,0,2,0);setTimeout(function (){location.href='$url'},2000);</script>";
+			echo "<script type='text/javascript'>TINY.box.show('$info',0,0,0,0,2,0);setTimeout(function (){location.href='$url'},1000);</script>";
+		}else{
+			echo "<script type='text/javascript'>location.href='$url';</script>";
 		}
 	}
 	

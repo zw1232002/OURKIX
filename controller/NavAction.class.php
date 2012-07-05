@@ -16,13 +16,14 @@ class NavAction extends Action{
 	public function add(){
 		//如果是post出来的，那么就执行新增导航的方法
 		if(isset($_POST['send'])){
-			$va=$this->_model->addNav();
-			$this->_tpl->display(SMARTY_ADMIN.'error.tpl');
-			Tool::alertLocation(Tool::getPrevPage(), '');
+			$this->_model->addNav() ? Redirect::getInstance($this->_tpl)->succ('?a=nav&m=index', ADD_SUCCESS) : Redirect::getInstance($this->_tpl)->succ(Tool::getPrevPage(), ADD_FAILED);
 		}
+		
 		//获取所有的主导航，新增时的下拉列表
 		$this->_tpl->assign('mainNav',$this->_model->getMainNav());
 		$this->_tpl->display(SMARTY_ADMIN.'/nav/add.tpl');
+		
+		
 	}
 	
 	
@@ -30,7 +31,7 @@ class NavAction extends Action{
 	public function update(){
 		
 		if($_POST['send']){
-			$this->_model->updateNav();			
+			$this->_model->updateNav() ? Redirect::getInstance($this->_tpl)->succ('?a=nav&m=index', UPDATE_SUCCESS) : Redirect::getInstance($this->_tpl)->succ(Tool::getPrevPage(), UPDATE_FAILED);		
 		}
 		//获取所有的主导航，新增时的下拉列表
 		$this->_tpl->assign('mainNav',$this->_model->getMainNav());
@@ -38,16 +39,12 @@ class NavAction extends Action{
 		//获取导航的信息
 		$this->_tpl->assign('nav_info',$this->_model->getOneNav());
 		$this->_tpl->display(SMARTY_ADMIN.'/nav/update.tpl');
-// 		Tool::alertLocation(Tool::getPrevPage(), '删除成功！');
 	}
 	
 	
 	//删除导航方法
 	public function delete(){
-		$this->_model->delNav();
-// 		$this->_tpl->display(SMARTY_ADMIN.'error.tpl');
-// 		echo $va;
-// 		$this->_model->delNav() ? Tool::alertLocation(Tool::getPrevPage(), '删除成功！') : null;
+		$this->_model->delNav() ? Redirect::getInstance($this->_tpl)->succ('?a=nav&m=index', DEL_SUCCESS) : Redirect::getInstance($this->_tpl)->succ(Tool::getPrevPage(), DEL_FAILED);
 	}
 }
 

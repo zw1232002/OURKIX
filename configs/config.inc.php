@@ -26,5 +26,13 @@ define('DB_PREFEX', 'ourkix_');//数据库表的前缀
 
 /*结束配置数据库连接参数*/
 
+/*提示信息配置*/
+define('ADD_SUCCESS', '新增成功');
+define('ADD_FAILED', '新增失败');
+define('UPDATE_SUCCESS', '更新成功');
+define('UPDATE_FAILED', '更新成功');
+define('DEL_SUCCESS', '删除成功');
+define('DEL_FAILED', '删除成功');
+
 
 ?>

@@ -35,5 +35,8 @@ define('UPDATE_FAILED', '更新成功');
 define('DEL_SUCCESS', '删除成功');
 define('DEL_FAILED', '删除成功');
 
+/**/
+define('UPLOAD_DIR','uploads/');//上传文件的保存路径
+
 
 ?>

@@ -12,7 +12,7 @@ class NavModel extends Model{
 	//获取所有的导航，不区分主导航和次级导航
 	public function getAllNav(){
 		//存储得到的结果集
-		$allResult=parent::select($this->_fields,array('order'=>'SORT ASC'));
+		$allResult=parent::select($this->_fields,array('order'=>'pid ASC ,id ASC'));
 		
 		/*
 		 * 遍历结果集，根据得到结果集中的pid再查找一次数据库，得出改导航的pid=其他导航id的导航的名字
@@ -27,7 +27,7 @@ class NavModel extends Model{
 	
 	//获取主导航
 	public function getMainNav(){
-		return parent::select(array('id','nav_name'),array('where'=>array("pid=0")));
+		return parent::select(array('id','nav_name'),array('where'=>array("pid=0"),'order'=>'id ASC'));
 	}
 	
 	//新增导航

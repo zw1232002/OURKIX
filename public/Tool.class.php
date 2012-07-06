@@ -22,6 +22,12 @@ class Tool {
 		}
 	}
 	
+	//弹窗返回
+	static public function alertBack($_info) {
+		echo "<script type='text/javascript'>alert('$_info');history.back();</script>";
+		exit();
+	}
+	
 	
 	//表单提交字符转义
 	static public function setFormString($_string) {

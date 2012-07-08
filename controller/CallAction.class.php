@@ -10,23 +10,30 @@ class CallAction extends Action{
 		
 	}
 	
-	//处理上传图片
-	public function upLoad() {
-		echo '我被执行到了';
-		$upload=new FileUpload('filedata');
-		$path=$upload->getPath();
-		echo $_FILES['Filedata']['tmp_name'];
+	//处理上传图片,主要处理单张图片上传，只上传，不操作数据库
+	public function upload() {
+		//这里需要生成一张缩略图，同时要保留原图，在置顶显示轮播图片时使用
 		
-// 		if (isset($_POST['send'])) {
-// 			$_fileupload = new FileUpload('pic',$_POST['MAX_FILE_SIZE']);
-// 			$_path = $_fileupload->getPath();
-// // 			$_img = new Image($_path);
-// // 			$_img->thumb(300,300);
-// // 			$_img->out();
-// // 			$_fileupload->alertOpenerClose('图片上传成功！','.'.$_path);
-// 		} else {
-// 			exit('警告：文件过大或者其他未知错误导致浏览器崩溃！');
-// 		}
+		$thumbArray=array();
+		
+		//上传图片
+		$load=new FileUpload('Filedata');
+		
+		$thumbArray['big']=$load->getPath();
+		
+		//实例化图像处理类
+		$imgResourse=new Image($load->getPath());
+		
+		//生出缩略图
+		$imgResourse->thumb(240,160);
+		
+		//输出图像
+		$imgResourse->out('_s');
+		
+		//小缩略图图片的路径
+		$thumbArray['small']=$imgResourse->getPath();
+		
+		echo json_encode($thumbArray);
 	}
 }
 

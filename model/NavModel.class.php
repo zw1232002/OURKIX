@@ -5,7 +5,7 @@ class NavModel extends Model{
 	public function __construct(){
 		parent::__construct();
 		$this->_tables=array(DB_PREFEX.'nav');
-		$this->_fields=array('id','nav_name','nav_title','nav_info','pid','sort');
+		$this->_fields=array('id','nav_name','nav_title','nav_info','pid','sort','thumb');
 		$this->_R['id']=$_GET['id'] ? $_GET['id'] : null;
 	}
 	
@@ -55,7 +55,7 @@ class NavModel extends Model{
 	
 	//删除导航
 	public function delNav(){
-		return $this->delete($this->_tables, array('id='.$this->_R['id']));
+		return $this->delFromId($this->_tables, $this->_R['id']);
 	}
 	
 	//ajax获取主导航下的二级导航

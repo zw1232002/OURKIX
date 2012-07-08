@@ -21,11 +21,12 @@ class FileUpload{
 		$this->maxSize=$maxSize / 1024;
 		$this->todayDate=date('Ymd');
 		$this->todayPath=$this->path.$this->todayDate.'/';
-		$this->checkError();//检查错误类型
-		$this->checkType();
-		$this->checkPath();//检查上传文件目录是否存在且是否可写
-		$this->moveUpload();//移动文件，把文件从临时目录移动过来
-		
+		if(!empty($_FILES)){
+			$this->checkError();//检查错误类型
+			$this->checkType();
+			$this->checkPath();//检查上传文件目录是否存在且是否可写
+			$this->moveUpload();//移动文件，把文件从临时目录移动过来
+		}
 	}
 	
 	//在类外获得图片路径的方法
@@ -100,9 +101,9 @@ class FileUpload{
 	
 	//验证文件类型
 	private function checkType(){
-		if(empty($this->type) ||  !in_array($this->type, $this->typeArr)){
-			Tool::alertBack('上传文件类型必须是'.implode(',', $this->typeArr).'中的一种！');
-		}
+// 		if(empty($this->type) ||  !in_array($this->type, $this->typeArr)){
+// 			Tool::alertBack('上传文件类型必须是'.implode(',', $this->typeArr).'中的一种！');
+// 		}
 	}
 	
 }

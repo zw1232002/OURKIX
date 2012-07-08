@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2012-07-06 16:30:46
+<?php /* Smarty version 2.6.26, created on 2012-07-08 11:31:33
          compiled from admin/article/list.tpl */ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -39,7 +39,7 @@ jQuery(function ($){
 <div class="tablebox">
 <p class='alr'><a href='?a=article&m=add'>添加文章</a></p>
 <h6>请选择文章类型：<select name="nav_main" id="nav_select" pid='<?php echo $this->_tpl_vars['parentId']; ?>
-'>
+' class="nav_select">
 						<?php $_from = $this->_tpl_vars['mainNav']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
     foreach ($_from as $this->_tpl_vars['key'] => $this->_tpl_vars['value']):
 ?>

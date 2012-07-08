@@ -81,7 +81,7 @@ body.mainbody {background:none; background:#fff;}
 .input_content form .vote_div .vote_wrap  a.add_topic_anss{display:inline-block;*zoom:1;*display:inline;}
 .upload_imgs h6{font-size:15px;font-weight:bold;line-height:15px;margin-bottom:10px;}
 .upload_imgs .upload_left{float:left;width:123px;margin-right:30px;}
-.upload_imgs .upload_right{float:right;width:870px;}
+.upload_imgs .upload_right{float:right;width:850px;margin-top:-20px;}
 .upload_imgs .select_file{position:relative;top:-8px;left:25px;}
 
 .input_content input.button{display:inline;border:none;cursor:pointer;margin-right:20px;}

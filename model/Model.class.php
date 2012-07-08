@@ -34,6 +34,17 @@ class Model extends DB{
 		return $this->_db->delete($_tables,$_where);
 	}
 	
+	//通过id删除数据
+	protected function delFromId(Array $_tables,$_id){
+		return $this->_db->delete($_tables,array('id='.$_id));
+	}
+	
+	
+	//获取下一个id
+	protected function nextId(){
+		return $this->_db->nextId($this->_tables);
+	}
+	
 	
 	//获取处理http请求的类
 	protected function getRequest(){

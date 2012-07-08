@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2012-07-05 17:05:40
+<?php /* Smarty version 2.6.26, created on 2012-07-08 11:31:48
          compiled from admin//nav/update.tpl */ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -28,7 +28,7 @@ unset($_smarty_tpl_vars);
 '/></li>
 				<li class="clearfix"><span>导航类型：</span> 
 					<select name="pid" pid='<?php echo $this->_tpl_vars['nav_info'][0]->pid; ?>
-' id='nav_select'>
+' id='nav_select' class="nav_select">
 							<option value="0">主导航</option>
 						<?php $_from = $this->_tpl_vars['mainNav']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
     foreach ($_from as $this->_tpl_vars['key'] => $this->_tpl_vars['value']):

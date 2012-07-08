@@ -22,18 +22,25 @@ class ArticleAction extends Action {
 	
 	//添加文章
 	public function add(){
-// 		$upload=new FileUpload('filedata');
-// 		$path=$upload->getPath();
-		echo $_FILES['Filedata']['tmp_name'];
-		
-		
 		if($_POST['send']){
 			$this->_model->addArticle() ? Redirect::getInstance($this->_tpl)->succ('?a=article&m=index', ADD_SUCCESS) : Redirect::getInstance($this->_tpl)->succ(Tool::getPrevPage(), ADD_FAILED);	
 		}
 		//
-		$nav=new NavModel();
-		$this->_tpl->assign('mainNav',$nav->getMainNav());
+		$this->_tpl->assign('mainNav',$this->_model->allNav);
 		$this->_tpl->display(SMARTY_ADMIN.'article/add.tpl');
+	}
+	
+	//修改文章
+	public function update(){
+		if($_POST['send']){
+			$this->_model->updateArticle() ? Redirect::getInstance($this->_tpl)->succ('?a=article&m=index', UPDATE_SUCCESS) : Redirect::getInstance($this->_tpl)->succ(Tool::getPrevPage(), UPDATE_FAILED);
+		}
+		
+		$this->_tpl->assign('mainNav',$this->_model->allNav);
+		
+		$this->_tpl->assign('articleInfo',$this->_model->getArticleAndImgsById());
+		
+		$this->_tpl->display(SMARTY_ADMIN.'article/update.tpl');
 	}
 	
 	
@@ -49,9 +56,6 @@ class ArticleAction extends Action {
 	}
 	
 	
-	public function uploadImgs(){
-		
-	}
 	
 }
 

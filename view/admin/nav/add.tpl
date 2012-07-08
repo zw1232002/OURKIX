@@ -4,6 +4,31 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>新增导航</title>
 {_include file="admin/include/css_js.tpl"_}
+<script type="text/javascript">
+jQuery(function (){
+	//上传封面图片
+	$("#major_pic_upload").uploadify({
+		'width'         : 120,
+		'height'        : 30,
+		'removeTimeout' : 0.1,
+		'swf'           : 'view/admin/uploadify/uploadify.swf',
+		'uploader'      : '?a=call&m=upload',
+		'auto'          : false,
+        'multi'         : false,
+        'onUploadSuccess' : function(file, data, response) {
+        	//返回的是json格式，先解析一下
+        	var parseData=jQuery.parseJSON(data);
+        	
+           $("#majorPic").attr('src',parseData.small);//返回小图的地址
+           $("#majorPic_input_s").val(parseData.small);
+           
+           //$("#majorPic_input_b").val(parseData.big);//大图地址
+           
+        }
+		
+	});
+});
+</script>
 </head>
 
 <body class="mainbody">
@@ -27,6 +52,18 @@
 				<li class="clearfix"><span> 介绍：</span>
 				<textarea name="nav_info"></textarea></li>
 			</ul>
+			<div class="upload_imgs clearfix">
+				<h6>封面图片上传</h6>
+				<div class="upload_left">
+					<input id="major_pic_upload" name="fiedata" type="file" /> 
+					<a href="javascript:$('#major_pic_upload').uploadify('upload','*')" class="click_btn">点击确认上传</a>
+				</div>
+				<div class="upload_right">
+					<img src="" id="majorPic" width="100px" height="100px" />
+				</div>
+				<input type="hidden" id="majorPic_input_s" name="thumb"/>
+				
+			</div>
 			<div style="text-align: center;">
 				<input type="submit" value="添加" class="button" name="send"/>
 			</div>

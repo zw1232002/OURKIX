@@ -160,7 +160,12 @@ class DB{
 		return $this->execute($_sql)->rowCount();
 	}
 	
-	
+	//获取自增长表的下一个id
+	protected function nextId($_tables) {
+		$_sql = "SHOW TABLE STATUS LIKE '$_tables[0]'";
+		$_stmt = $this->execute($_sql);
+		return $_stmt->fetchObject()->Auto_increment;
+	}
 	
 	//执行SQL
 	private function execute($_sql) {

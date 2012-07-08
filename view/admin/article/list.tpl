@@ -32,7 +32,7 @@ jQuery(function ($){
 <div class="onthispage">您当前所在位置&nbsp;&gt;&nbsp;<span>文章管理</span></div>
 <div class="tablebox">
 <p class='alr'><a href='?a=article&m=add'>添加文章</a></p>
-<h6>请选择文章类型：<select name="nav_main" id="nav_select" pid='{_$parentId_}'>
+<h6>请选择文章类型：<select name="nav_main" id="nav_select" pid='{_$parentId_}' class="nav_select">
 						{_foreach from=$mainNav key=key item=value_}
 							<option value="{_$value->id_}">{_$value->nav_name_}文章</option>
 						{_/foreach_}

@@ -9,7 +9,7 @@ class NavAction extends Action{
 	//默认的方法，显示导航列表
 	public function index(){
 		$this->_tpl->assign('allNav',$this->_model->getAllNav());
-		$this->_tpl->display(SMARTY_ADMIN.'/nav/list.tpl');
+		$this->_tpl->display(SMARTY_ADMIN.'nav/list.tpl');
 	}
 	
 	//新增导航方法
@@ -24,7 +24,7 @@ class NavAction extends Action{
 		
 		//注入返回上一页
 		$this->_tpl->assign('prevPage',Tool::getPrevPage());
-		$this->_tpl->display(SMARTY_ADMIN.'/nav/add.tpl');
+		$this->_tpl->display(SMARTY_ADMIN.'nav/add.tpl');
 		
 		
 	}
@@ -44,7 +44,7 @@ class NavAction extends Action{
 		
 		//注入返回上一页
 		$this->_tpl->assign('prevPage',Tool::getPrevPage());
-		$this->_tpl->display(SMARTY_ADMIN.'/nav/update.tpl');
+		$this->_tpl->display(SMARTY_ADMIN.'nav/update.tpl');
 	}
 	
 	

@@ -29,6 +29,15 @@ class Tool {
 	}
 	
 	
+	//关闭
+	static public function close($info){
+		if(isset($info)){
+			echo "<script type='text/javascript'>alert('$info');</script>";
+		}
+		echo "<script type='text/javascript'>window.close();</script>";
+		exit();
+	}
+	
 	//表单提交字符转义
 	static public function setFormString($_string) {
 		if (!get_magic_quotes_gpc()) {

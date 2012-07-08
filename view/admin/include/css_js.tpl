@@ -4,5 +4,4 @@
 <script type="text/javascript" src="view/admin/js/jquery-1.4.4.min.js"></script>
 <script type="text/javascript" src="view/admin/js/setDefaultSelect.js"></script>
 <script type="text/javascript" src="view/admin/js/tinybox.js"></script>
-<script type="text/javascript" src="view/admin/uploadify/swfobject.js"></script>
-<script type="text/javascript" src="view/admin/uploadify/jquery.uploadify.v2.1.4.min.js"></script>
+<script type="text/javascript" src="view/admin/uploadify/jquery.uploadify-3.1.min.js"></script>

@@ -21,7 +21,7 @@ class Action{
 		
 		//初始化m的值，如果有值就返回，不然就返回index
 		$m=isset($_GET['m']) && !empty($_GET['m'])? $_GET['m'] : 'index';
-		
+
 		//如果对应的方法存在，就执行对应的方法，否则执行index方法。
 		method_exists($this, $m) ? eval('$this->'.$m.'();') :$this->index();
 	}

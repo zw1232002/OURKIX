@@ -17,6 +17,7 @@ class ArticleModel extends Model{
 		
 		//如果get没有获取到，就用第一个主导航的id
 		$this->_R['id']=isset($_GET['id']) ? $_GET['id'] : $this->allNav[0]->id;
+		$this->_R['columnId']=isset($_GET['columnId']) ? $_GET['columnId'] :$this->_R['id'];
 	}
 	
 	public function returnGetId(){
@@ -29,6 +30,26 @@ class ArticleModel extends Model{
 		return parent::select(array('n1.id','n1.title','n1.top','n1.date','n2.nav_name'),array('where'=>array('n1.parent_nav='.$this->_R['id'],'n2.id=n1.nav'),'order'=>'n1.top DESC,n1.date DESC'));
 	}
 	
+	//获取所有的文章,前台显示用,通过id来获值
+	public function getArticleById(){
+		return parent::select($this->_fields,array('where'=>array('parent_nav='.$this->_R['id']),'order'=>'date DESC'));
+	}
+	
+	//前台显示文章时使用
+	public function getOneArticle(){
+		$this->_tables=array(DB_PREFEX.'article n1 ,'.DB_PREFEX.'content_imgs n2');
+		return parent::select(array('n1.id','n1.parent_nav','n1.nav','n1.title','n1.info','n1.tags','n1.content','n1.thumb_s','n1.thumb_b','n1.img_id','n2.id pic_id','n2.src_big','n2.content imgs_content','n2.src_small'),array('where'=>array('n1.id='.$_GET['articleId'],'n2.pid=n1.img_id')));
+	}
+	
+	
+	public function getArticleByColumnId(){
+		return parent::select($this->_fields,array('where'=>array(' nav='.$this->_R['columnId']),'order'=>'date DESC'));
+	}
+	
+	//获取所有置顶的文章
+	public function getTopArticle(){
+		return parent::select($this->_fields,array('where'=>array('parent_nav='.$this->_R['id'],'top=1'),'order'=>'date DESC'));
+	}
 	
 	
 	//添加文章

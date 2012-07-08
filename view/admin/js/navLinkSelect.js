@@ -11,7 +11,7 @@ jQuery(function ($){
 	
 	function ajaxSetChildNav(){
 		$.ajax({
-			   type: "POST",
+			   type: "get",
 			   url: "?a=nav&m=ajaxChildNav",
 			   data: "id="+mainSelect.find("option:selected").val(),
 			   success: function(msg){

@@ -6,6 +6,9 @@ class IndexModel extends Model{
 		parent::__construct();
 	}
 	
+	
+	
+	
 }
 
 ?>

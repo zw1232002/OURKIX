@@ -1,0 +1,55 @@
+@charset "utf-8";
+/* CSS Document */
+.main .reg_content{width:610px;border-right:1px dashed #cecece;margin-top:27px;float:left;padding:0 25px;}
+.main .reg_title{height:28px;border-bottom:1px solid #ddd;}
+.main .reg_title strong{font-size:14px;float:left;}
+.main .reg_title a{font-size:14px;font-weight:bold;float:right;}
+
+.main .reg_content .reg_form{padding:65px 0 105px 66px;}
+.main .reg_content .reg_form ul li{padding-top:9px;position:relative;_height:27px;margin:0;}
+.main .reg_content .reg_form .input { vertical-align:bottom;}
+.main .reg_content .reg_form .input p{line-height:20px;}
+.main .reg_content .reg_form .input span{display:inline-block;*zoom:1;*display:inline;height:27px;line-height:27px;font-size:15px;}
+.main .reg_content .reg_form .input span.xxgg {width:80px; position:absolute; left:135px; top:44px; font-size:12px;}
+.main .reg_content .reg_form .input label{display:block;width:65px;text-align:right;float:left;height:27px;line-height:27px; vertical-align:bottom; font-style:normal;}
+.main .reg_content .reg_form .input em{display:block;width:65px;text-align:right;float:left;height:27px;line-height:27px; vertical-align:bottom; font-style:normal;}
+.main .reg_content .reg_form .input label.qwe {text-align:left; padding-left:8px; width:40px;}
+.main .reg_content .reg_form .input input.text{padding:0 3px;margin-left:5px;height:27px;line-height:27px;width:292px;border:none;background:url(../images/input_bg.gif ) no-repeat left top;}
+.main .reg_content .reg_form .input img.timg {border:3px solid #dddddd;}
+
+.main .reg_content .ffas {padding:10px 0 0 71px; vertical-align:middle;}
+.main .reg_content .ffas input {vertical-align:middle;}
+
+.main .reg_content .xaixai {padding:30px 0 0 71px;}
+.main .reg_content .xaixai input.submit {width:115px; height:38px; border:none; background:url(../images/regist_xg.gif) no-repeat; cursor:pointer;}
+
+.main .reg_content .reg_form ul li.agree .input{padding-left:20px;}
+.main .reg_content .reg_form ul li.agree .input input{float:left;}
+.main .reg_content .reg_form ul li.agree .input label{padding-left:5px;}
+
+.main .reg_content .reset_success {padding:65px 0 0 66px;}
+.main .reg_content .reset_success p{line-height:25px;}
+.main .reg_content .reset_success p a{color:#f00;}
+
+.main .reg_content .reg_form ul li.remember_pass .input{line-height:27px;}
+.main .reg_content .reg_form ul li.remember_pass .input input{height:27px;float:left;}
+.main .reg_content .reg_form ul li.remember_pass .input a{float:left;}
+.main .reg_content .reg_form ul li.remember_pass .input label{width:70px;float:right;_width:75px;}
+
+.main .reg_content .reg_form ul li .sta0{position:absolute;right:125px;top:5px;width:17px;height:27px;line-height:27px;padding-left:17px;background:url(../images/msg_bg.png) no-repeat left bottom;display:none;}
+.main .reg_content .reg_form ul li.hover .show_attention{display:block;}
+.main .reg_content .reg_form ul li .show_attention{z-index:10;padding:10px;display:none;position:absolute;top:4px;right:-123px;border-left:1px solid #cacaca;border-right:1px solid #cacaca;background:#fff;width:266px;_padding-right:0;}
+.main .reg_content .reg_form ul li .show_attention em{width:296px;display:inline-block;*zoom:1;*display:inline;background:url(../images/attention_bg.gif) no-repeat left top;position:absolute;left:-9px;}
+.main .reg_content .reg_form ul li .show_attention em.show_bg_top{top:0;height:26px;}
+.main .reg_content .reg_form ul li .show_attention em.show_bg_bottom{bottom:0px;background-position:left bottom;height:3px;}
+.main .reg_content .reg_form ul li .show_attention span{display:none;line-height:20px;position:relative;z-index:10;width:276px;}
+.main .reg_content .reg_form ul li .show_attention span.sta1{background:url(../images/msg_bg.png) no-repeat left -49px;padding-left:20px;}
+.main .reg_content .reg_form ul li .show_attention span.sta2{background:url(../images/msg_bg.png) no-repeat left 2px;padding-left:20px;}
+.main .reg_content .reg_form ul li .show_attention span b{background:url(../images/icon_pwd.gif) no-repeat left center;height:7px;display:inline-block;*zoom:1;*display:inline;width:80px;}
+.main .reg_content .reg_form ul li.regist {padding-top:50px;text-align:center;margin-right:110px;_margin-right:65px;}
+.main .reg_content .reg_form ul li.regist input{border:none;background:url(../images/regist_bg.gif) no-repeat left top;width:132px;height:38px;color:#fff;padding-right:20px;cursor:pointer;font-size:20px;}
+
+.main .reg_explain{margin-top:65px;padding-left:25px;width:274px;float:right;}
+.main .reg_explain h6{font-size:20px;padding-bottom:23px;line-height:20px;}
+.main .reg_explain p{font-size:14px;color:#4b5843;line-height:14px;padding-top:12px;}
+.main .reg_explain h6{font-size:20px;color:#4b5843;}

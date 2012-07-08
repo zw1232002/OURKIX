@@ -6,7 +6,10 @@ class NavModel extends Model{
 		parent::__construct();
 		$this->_tables=array(DB_PREFEX.'nav');
 		$this->_fields=array('id','nav_name','nav_title','nav_info','pid','sort','thumb');
-		$this->_R['id']=$_GET['id'] ? $_GET['id'] : null;
+		
+		$mainNav=$this->getMainNav();
+		$this->_R['id']=isset($_GET['id']) && !Validate::isNullString($_GET['id']) ? $_GET['id'] : $mainNav[0]->id;
+		$this->_R['columnId']=isset($_GET['columnId']) ? $_GET['columnId'] : null;
 	}
 	
 	//获取所有的导航，不区分主导航和次级导航
@@ -20,7 +23,7 @@ class NavModel extends Model{
 		 * 如果找不到，则返回空数组，在模板文件中，通过对nav_name进行判断，来进行显示
 		 * */
 		foreach ($allResult as $key=>$value){
-			$allResult[$key]->pid=parent::select(array('nav_name'),array('where'=>array($value->pid.'=id')));
+			$allResult[$key]->pidName=parent::select(array('nav_name'),array('where'=>array($value->pid.'=id')));
 		}
 		return $allResult;
 	}
@@ -29,6 +32,9 @@ class NavModel extends Model{
 	public function getMainNav(){
 		return parent::select(array('id','nav_name'),array('where'=>array("pid=0"),'order'=>'id ASC'));
 	}
+	
+	
+	
 	
 	//新增导航
 	public function addNav(){
@@ -44,6 +50,10 @@ class NavModel extends Model{
 		return parent::select($this->_fields,array('where'=>array('id='.$this->_R['id']),'limit'=>'1'));
 	}
 	
+	//获取次级导航信息
+	public function getOneChildNav(){
+		return parent::select($this->_fields,array('where'=>array('id='.$this->_R['columnId']),'limit'=>'1'));
+	}
 	
 	//修改导航
 	public function updateNav(){
@@ -60,12 +70,8 @@ class NavModel extends Model{
 	
 	//ajax获取主导航下的二级导航
 	public function ajaxGetChildNav(){
-		if(isset($_POST['id']) && !Validate::isNullString($_POST['id'])){
-			$result=parent::select(array('id','nav_name'),array('where'=>array("pid=".$_POST['id'])));
-			return $result;
-			
-		}
-			
+		$result=parent::select(array('id','nav_name','nav_title','nav_info'),array('where'=>array("pid=".$this->_R['id'])));
+		return $result;
 	}
 }
 

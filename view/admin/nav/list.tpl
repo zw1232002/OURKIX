@@ -27,7 +27,7 @@
         <td><a href="?a=nav&m=update&id={_$value->id_}">{_$value->nav_name_}</a></td>
         <td>{_$value->nav_title_}</td>
         <td>{_$value->sort_}</td>
-        <td>{_if $value->pid[0]->nav_name_}{_$value->pid[0]->nav_name_}{_else_}主导航{_/if_}</td>
+        <td>{_if $value->pidName[0]->nav_name_}{_$value->pidName[0]->nav_name_}{_else_}主导航{_/if_}</td>
         <td><a href="?a=nav&m=update&id={_$value->id_}"#">编辑</a> | <a href="?a=nav&m=delete&id={_$value->id_}"">删除</a></td>
       </tr>
   	{_/foreach_}

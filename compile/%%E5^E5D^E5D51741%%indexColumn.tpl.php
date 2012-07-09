@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2012-07-09 02:59:21
+<?php /* Smarty version 2.6.26, created on 2012-07-09 16:57:29
          compiled from front/indexColumn.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'getDays', 'front/indexColumn.tpl', 83, false),array('function', 'explodeString', 'front/indexColumn.tpl', 84, false),array('function', 'htmlspecialchars_decode', 'front/indexColumn.tpl', 85, false),)), $this); ?>
@@ -6,7 +6,7 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'getDays', '
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>无标题文档</title>
+<title>OURKIX</title>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "front/include/css_js.tpl", 'smarty_include_vars' => array()));
 $this->_tpl_vars = $_smarty_tpl_vars;

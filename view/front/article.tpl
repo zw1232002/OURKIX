@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>无标题文档</title>
+<title>OURKIX-文章</title>
 {_include file=front/include/css_js.tpl_}
 <link href="view/front/css/News_list.css" rel="stylesheet" type="text/css" />
 <link href="view/front/css/News_content.css" rel="stylesheet" type="text/css"/>

@@ -262,7 +262,7 @@
 			});
 			if(!this.maskDiv){
 				this.maskDiv=coly.$("<div><div id='mask' style='position:relative;'>mask</div></div>");
-				this.loadingDiv=coly.$("<div><img src='images/loading.gif'/></div>");
+				this.loadingDiv=coly.$("<div><img src='view/front/images/loading.gif'/></div>");
 				this.pop_box.appendChild(this.maskDiv);
 				this.mask=coly.$("#mask");
 				this.maskDivLeft=coly.$("<div>this.maskDivRigh</div>");

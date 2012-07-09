@@ -7,7 +7,19 @@
  * */
 
 function smarty_function_htmlspecialchars_decode($array){
-	return htmlspecialchars_decode($array['val']);
+	if(count($array)!=0 && isset($array['val'])){
+		
+		$content=htmlspecialchars_decode($array['val']);
+		
+		if($array['truncate'] && mb_strlen($content)>$array['truncate']){
+			$content=mb_substr($content, 0,$array['truncate'],'utf-8').'.......';
+			
+		}
+		
+		return $content;
+	}
+	
+	
 }
 
 ?>

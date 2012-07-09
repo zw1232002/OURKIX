@@ -183,12 +183,12 @@
 	    <div class="common_content related_content clearfix">
 	      <ul>
 	      	<li class="clearfix">
-	      		<img src="images/test/ad2.jpg"/>
+	      		<img src="view/front/images/test/ad2.jpg"/>
 	      		<strong>The Complex Guide to Dressing for Los Angeles</strong><br/>
 	      		<span>Jordan Brand held a special "Flight Forum" this week at the Nike Campus in Beaverton, heavily centered around the brand's evolution of basketball footwear. Relying on performance rather than strictly visual aesthetics</span>
 	      	</li>
 	      	<li class="clearfix">
-	      		<img src="images/test/ad2.jpg"/>
+	      		<img src="view/front/images/test/ad2.jpg"/>
 	      		<strong>The Complex Guide to Dressing for Los Angeles</strong><br/>
 	      		<span>Jordan Brand held a special "Flight Forum" this week at the Nike Campus in Beaverton, heavily centered around the brand's evolution of basketball footwear. Relying on performance rather than strictly visual aesthetics</span>
 	      	</li>
@@ -212,7 +212,7 @@
                 <div class="comment">Jordan Brand held a special "Flight Forum" this week at the Nike Campus in Beaverton, heavily centered around the brand's evolution of basketball footwear. Relying on performance rather than strictly visual aesthetics</div>
                 <div class="comment_right"></div>
               </div>
-              <img class="portrait" src="images/test/touxiang.jpg"/>
+              <img class="portrait" src="view/front/images/test/touxiang.jpg"/>
             </li>
             <li class="clearfix"> 
               <div class="floor_comm clearfix">
@@ -221,7 +221,7 @@
                 <div class="comment">Jordan Brand held a special "Flight Forum" this week at the Nike Campus in Beaverton, heavily centered around the brand's evolution of basketball footwear. Relying on performance rather than strictly visual aesthetics</div>
                 <div class="comment_right"></div>
               </div>
-              <img class="portrait" src="images/test/touxiang.jpg"/>
+              <img class="portrait" src="view/front/images/test/touxiang.jpg"/>
             </li>
             <li class="clearfix">
               <div class="floor_comm clearfix">
@@ -233,7 +233,7 @@
                 <div class="quote_comment comment">Jordan Brand held a special "Flight Forum" this week at the Nike Campus in Beaverton, heavily centered around the brand's evolution of basketball footwear. Relying on performance rather than strictly visual aesthetics</div>
                 <div class="comment_right"></div>
               </div>
-              <img class="portrait" src="images/test/touxiang.jpg"/>
+              <img class="portrait" src="view/front/images/test/touxiang.jpg"/>
             </li>
             <li class="clearfix"> 
               <div class="floor_comm clearfix">
@@ -242,7 +242,7 @@
                 <div class="comment">Jordan Brand held a special "Flight Forum" this week at the Nike Campus in Beaverton, heavily centered around the brand's evolution of basketball footwear. Relying on performance rather than strictly visual aesthetics</div>
                 <div class="comment_right"></div>
               </div>
-              <img class="portrait" src="images/test/touxiang.jpg"/>
+              <img class="portrait" src="view/front/images/test/touxiang.jpg"/>
             </li>
             <li>
               <ul id="PageFen">
@@ -338,8 +338,9 @@
 					<img src="{_$value->src_big_}"/>
 				</div>
 				<div class="popContent">
-					<div class="text">{_$value->imgs_content_}</div>
-					
+					<div class="text">{_htmlspecialchars_decode val=$value->imgs_content _}</div>
+					<ul class="com_content">
+					</ul>
 				</div>
 			</li>
      	 {_/foreach_}

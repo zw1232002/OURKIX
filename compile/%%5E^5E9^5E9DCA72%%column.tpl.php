@@ -1,7 +1,5 @@
-<?php /* Smarty version 2.6.26, created on 2012-07-09 17:38:35
-         compiled from front/indexColumn.tpl */ ?>
-<?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('function', 'getDays', 'front/indexColumn.tpl', 83, false),array('function', 'explodeString', 'front/indexColumn.tpl', 84, false),array('function', 'htmlspecialchars_decode', 'front/indexColumn.tpl', 85, false),)), $this); ?>
+<?php /* Smarty version 2.6.26, created on 2012-07-09 19:36:07
+         compiled from front/column.tpl */ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -94,31 +92,11 @@ unset($_smarty_tpl_vars);
     	<div class="listBox_News">
 	        <h4 class="sort">NEWS | 最新资讯</h4>
 	        <ul class="NewsList_ul">
-	          <?php $_from = $this->_tpl_vars['allArticle']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
-    foreach ($_from as $this->_tpl_vars['key'] => $this->_tpl_vars['value']):
-?>
-	      	 		  <li class="NewsList_li clearfix">
-			            <div class="img">
-			              <ul>
-			                <!-- <li><span href="#">I like it!<em></em></span></li>
-			                <li><span href="#">不错哦,赞<em></em></span></li> -->
-			              </ul>
-			              <a href="?m=article&articleId=<?php echo $this->_tpl_vars['value']->id; ?>
-"><img src="<?php echo $this->_tpl_vars['value']->thumb_s; ?>
-" width="240" height="160" /></a>
-			            </div>
-			            <h4><a href="?m=article&articleId=<?php echo $this->_tpl_vars['value']->id; ?>
-"><?php echo $this->_tpl_vars['value']->title; ?>
-</a></h4>
-			            <span class="time"><?php echo smarty_function_getDays(array('date' => $this->_tpl_vars['value']->date), $this);?>
- days ago &middot; by staff &middot; <?php echo $this->_tpl_vars['value']->count; ?>
- views</span>
-			            <div class="tags">Tags: <?php echo smarty_function_explodeString(array('string' => $this->_tpl_vars['value']->tags,'split' => ','), $this);?>
-</div>
-			            <p><?php echo smarty_function_htmlspecialchars_decode(array('val' => $this->_tpl_vars['value']->info), $this);?>
-</p>
-			          </li>
-	      	 	<?php endforeach; endif; unset($_from); ?>
+	          <?php $_smarty_tpl_vars = $this->_tpl_vars;
+$this->_smarty_include(array('smarty_include_tpl_file' => "front/include/news_list.tpl", 'smarty_include_vars' => array()));
+$this->_tpl_vars = $_smarty_tpl_vars;
+unset($_smarty_tpl_vars);
+ ?>
 	        </ul>
 	        <ul class="PageFen">
 	          <li class="onthis"><a href="#">1</a></li>

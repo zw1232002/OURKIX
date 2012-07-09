@@ -1,0 +1,4 @@
+
+RewriteEngine on
+RewriteRule ^/test([0-9]*).html$ /test.php?id=$1
+RewriteRule ^/new([0-9]*)/$ /new.php?id=$1 [R]

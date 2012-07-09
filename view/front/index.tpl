@@ -66,7 +66,7 @@
 		          <span class="time">{_getDays date=$value->date_} days ago &middot; by <a href="#">staff</a> &middot; {_$value->count_} views</span>
 		          <div class="tags">Tags: <a href="#">Clot</a>, <a href="#">Fashion</a>, <a href="#">Gildas Loaec</a>, <a href="#">Interviews</a>, <a href="#">Kitsune</a></div>
 		          <div class="text">
-		          {_htmlspecialchars_decode val=$value->content_}
+		          {_htmlspecialchars_decode val=$value->content truncate=950_}
 		          </div>
 		        </li>
       	 	{_/foreach_}
@@ -103,21 +103,7 @@
       <div class="listBox_News">
         <h4 class="sort">NEWS | 最新资讯</h4>
         <ul class="NewsList_ul">
-        	{_foreach from=$allArticle key=key item=value_}
-      	 		  <li class="NewsList_li clearfix">
-		            <div class="img">
-		              <ul>
-		                <!-- <li><span href="#">I like it!<em></em></span></li>
-		                <li><span href="#">不错哦,赞<em></em></span></li> -->
-		              </ul>
-		              <a href="#"><img src="{_$value->thumb_s_}" width="240" height="160" /></a>
-		            </div>
-		            <h4><a href="#">{_$value->title_}</a></h4>
-		            <span class="time">{_getDays date=$value->date_} days ago &middot; by staff &middot; {_$value->count_} views</span>
-		            <div class="tags">Tags: {_explodeString string=$value->tags split=','_}</div>
-		            <p>{_htmlspecialchars_decode val=$value->info_}</p>
-		          </li>
-      	 	{_/foreach_}
+        	{_include file=front/include/news_list.tpl_}
         </ul>
         <ul class="PageFen">
           <li class="onthis"><a href="#">1</a></li>

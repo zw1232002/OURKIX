@@ -19,6 +19,12 @@ class Model extends DB{
 		
 	}
 	
+	//通过某一个值，来获取
+	protected function getOne(Array $_fields,$key,$value,$limit=null){
+		$limit=isset($limit) ? $limit : null;
+		return $this->_db->select($this->_tables,$_fields,array('where'=>array("$key=$value"),'order'=>'date DESC','limit'=>$limit));
+	}
+	
 	//添加的基类方法
 	protected function add(Array $_tables,Array $_fields){
 		return $this->_db->add($_tables,$_fields);

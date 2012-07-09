@@ -6,7 +6,20 @@
  * */
 
 function smarty_function_explodeString($array){
-	return explode($array['split'], $array['string']);
+	
+	if(count($array)>0 && isset($array['string']) && isset($array['split'])){
+		
+		$explodeArray=explode($array['split'], $array['string']);
+		
+		if($array['joinLeft'] && $array['joinRight']){
+			foreach ($explodeArray as $key=>$value){
+				$explodeArray[$key]=$array['joinLeft'].$value.$array['joinRight'];
+			}
+			return implode(',', $explodeArray);
+		}
+		return $explodeArray;
+	}
+	
 }
 
 ?>

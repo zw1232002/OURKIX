@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2012-07-09 16:57:38
+<?php /* Smarty version 2.6.26, created on 2012-07-09 20:58:23
          compiled from front/article.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'getDays', 'front/article.tpl', 73, false),array('function', 'htmlspecialchars_decode', 'front/article.tpl', 76, false),)), $this); ?>
@@ -215,12 +215,12 @@ unset($_smarty_tpl_vars);
 	    <div class="common_content related_content clearfix">
 	      <ul>
 	      	<li class="clearfix">
-	      		<img src="images/test/ad2.jpg"/>
+	      		<img src="view/front/images/test/ad2.jpg"/>
 	      		<strong>The Complex Guide to Dressing for Los Angeles</strong><br/>
 	      		<span>Jordan Brand held a special "Flight Forum" this week at the Nike Campus in Beaverton, heavily centered around the brand's evolution of basketball footwear. Relying on performance rather than strictly visual aesthetics</span>
 	      	</li>
 	      	<li class="clearfix">
-	      		<img src="images/test/ad2.jpg"/>
+	      		<img src="view/front/images/test/ad2.jpg"/>
 	      		<strong>The Complex Guide to Dressing for Los Angeles</strong><br/>
 	      		<span>Jordan Brand held a special "Flight Forum" this week at the Nike Campus in Beaverton, heavily centered around the brand's evolution of basketball footwear. Relying on performance rather than strictly visual aesthetics</span>
 	      	</li>
@@ -244,7 +244,7 @@ unset($_smarty_tpl_vars);
                 <div class="comment">Jordan Brand held a special "Flight Forum" this week at the Nike Campus in Beaverton, heavily centered around the brand's evolution of basketball footwear. Relying on performance rather than strictly visual aesthetics</div>
                 <div class="comment_right"></div>
               </div>
-              <img class="portrait" src="images/test/touxiang.jpg"/>
+              <img class="portrait" src="view/front/images/test/touxiang.jpg"/>
             </li>
             <li class="clearfix"> 
               <div class="floor_comm clearfix">
@@ -253,7 +253,7 @@ unset($_smarty_tpl_vars);
                 <div class="comment">Jordan Brand held a special "Flight Forum" this week at the Nike Campus in Beaverton, heavily centered around the brand's evolution of basketball footwear. Relying on performance rather than strictly visual aesthetics</div>
                 <div class="comment_right"></div>
               </div>
-              <img class="portrait" src="images/test/touxiang.jpg"/>
+              <img class="portrait" src="view/front/images/test/touxiang.jpg"/>
             </li>
             <li class="clearfix">
               <div class="floor_comm clearfix">
@@ -265,7 +265,7 @@ unset($_smarty_tpl_vars);
                 <div class="quote_comment comment">Jordan Brand held a special "Flight Forum" this week at the Nike Campus in Beaverton, heavily centered around the brand's evolution of basketball footwear. Relying on performance rather than strictly visual aesthetics</div>
                 <div class="comment_right"></div>
               </div>
-              <img class="portrait" src="images/test/touxiang.jpg"/>
+              <img class="portrait" src="view/front/images/test/touxiang.jpg"/>
             </li>
             <li class="clearfix"> 
               <div class="floor_comm clearfix">
@@ -274,7 +274,7 @@ unset($_smarty_tpl_vars);
                 <div class="comment">Jordan Brand held a special "Flight Forum" this week at the Nike Campus in Beaverton, heavily centered around the brand's evolution of basketball footwear. Relying on performance rather than strictly visual aesthetics</div>
                 <div class="comment_right"></div>
               </div>
-              <img class="portrait" src="images/test/touxiang.jpg"/>
+              <img class="portrait" src="view/front/images/test/touxiang.jpg"/>
             </li>
             <li>
               <ul id="PageFen">
@@ -377,9 +377,10 @@ unset($_smarty_tpl_vars);
 "/>
 				</div>
 				<div class="popContent">
-					<div class="text"><?php echo $this->_tpl_vars['value']->imgs_content; ?>
+					<div class="text"><?php echo smarty_function_htmlspecialchars_decode(array('val' => $this->_tpl_vars['value']->imgs_content), $this);?>
 </div>
-					
+					<ul class="com_content">
+					</ul>
 				</div>
 			</li>
      	 <?php endforeach; endif; unset($_from); ?>

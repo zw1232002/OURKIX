@@ -28,14 +28,14 @@ class IndexAction extends Action{
 		
 		$this->_tpl->assign('nav_infos',$this->nav->getOneChildNav());
 		
-		$this->_tpl->display(SMARTY_FRONT.'indexColumn.tpl');
+		$this->_tpl->display(SMARTY_FRONT.'column.tpl');
 	}
 	
 	public function article(){
 		
 		$this->_tpl->assign('oneArticle',$this->article->getOneArticle());
 		
-// 		print_r($this->article->getOneArticle());
+		echo $this->article->setCount();
 		
 		$this->_tpl->display(SMARTY_FRONT.'article.tpl');
 	}

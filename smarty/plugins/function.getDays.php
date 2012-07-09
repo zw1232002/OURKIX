@@ -8,7 +8,7 @@
 
 function smarty_function_getDays($array){
 	$gap=time()-strtotime($array['date']);
-	return (date('m',$gap)-1)*30+date('d',$gap)-1; 
+	return date('m',$gap)-1>=1 ? (date('m',$gap)-1)*30+date('d',$gap)-1 :date('d',$gap)-1 ; 
 }
 
 ?>
